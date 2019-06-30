@@ -1,5 +1,5 @@
 """
-Calculate your Body Mass Index (BMI)
+Python: Calculate your Body Mass Index (BMI)
 
 Note:
     1. if name in ['a', 'b', 'c']:
