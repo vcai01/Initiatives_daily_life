@@ -1,13 +1,13 @@
 """
-专为为麻麻网购银行理财产品而设计，再也不用按计算器
+Calculate the interest of the mutual funds purchased by my mom. 
 """
 import datetime
 import calendar
 
-amount = input('本金: ')
-interest_rate = input('年化利率 (%): ')
-day = input('购买天数: ')
-starting_date = input('起息日 (YYYY-MM-DD): ')
+amount = input('Capital: ')
+interest_rate = input('Annual interest rate (%): ')
+day = input('Duration (how many days): ')
+starting_date = input('Starting day (YYYY-MM-DD): ')
 
 def interest(amount, interest_rate, day):
     return int(amount) * float(interest_rate)/100 / 365 * int(day)
@@ -18,11 +18,11 @@ def total(amount, interest_result):
     return float(amount) + float(interest_result)
 x = total(amount, interest_result)
 
-print('利息: RMB', round(interest_result, 2),  '本金利息总共: RMB', round(x,2) )
+print('Interest: RMB', round(interest_result, 2),  'The sum of capital and interest: $', round(x,2) )
 
 def next_day(date):
     date = date + datetime.timedelta(days = int(day))
-    return '到期日： {d}'.format(d=date)
+    return 'Maturity： {d}'.format(d=date)
     
 word = starting_date.split('-')
 YYYY = int(word[0])
@@ -44,4 +44,4 @@ final_day = WhichDays[calendar.weekday(int_Y, int_M, int_D)]
 final_day_CN = {"Monday": "星期一", "Tuesday": "星期二", 
                 "Wednesday": "星期三", "Thursday": "星期四", 
                 "Friday": "星期五", "Saturday": "星期六", "Sunday": "星期天"}
-print(final_day_CN[final_day], '及下一个工作日留意手机入账短信提醒')
+print('Pay attention to the text message from the bank and check your account on', final_day_CN[final_day])
