@@ -1,5 +1,5 @@
 """
-Calculate the interest of the mutual funds purchased by my mom. 
+Calculate the interest of the mutual funds purchased by my mom (EN version). 
 """
 import datetime
 import calendar
